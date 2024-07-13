@@ -28,25 +28,37 @@ Created on Fri Jul 12 18:34:14 2024
 # print("max is ", max_find(a, b, c))
 
 
+
 # function that shows prime numbers in a given range
 
 def find_primes(down, up):
+    primes = []
     
-    nums1 = []
-    nums2 = []
-    while down < up:
-        nums1.append(down)
-        nums2.append(down)
+    for num in range(down, up + 1):
+        prime = True
         
-        down += 1
+        if num == 1:
+            prime = False
+        elif num == 2:
+            prime = True
+            
+        else:
+            for x in range(2, num):
+                if (num % x == 0):
+                    prime = False
+        if prime:
+            primes.append(num)
+
+    return primes
+
+down = int(input("Enter the range:\nstar: "))
+up = int(input("finish: "))
+
+primes = (find_primes(down, up))
+for prime in primes:
+    print(prime)
     
-    for n1 in num1:
-        for n2 in nums2:
-            if n1 % n2 ==
-        
-
-
-
+    
 
 
 
