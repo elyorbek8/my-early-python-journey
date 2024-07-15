@@ -29,37 +29,68 @@ Created on Fri Jul 12 18:34:14 2024
 
 
 
-# function that shows prime numbers in a given range
+# # function that shows prime numbers in a given range
 
-def find_primes(down, up):
-    primes = []
+# def find_primes(down, up):
+#     primes = []
     
-    for num in range(down, up + 1):
-        prime = True
-        
-        if num == 1:
-            prime = False
-        elif num == 2:
-            prime = True
+#     for num in range(down, up + 1):
+#         prime = True
+#         if num == 1:
+#             prime = False
+#         elif num == 2:
+#             prime = True
             
-        else:
-            for x in range(2, num):
-                if (num % x == 0):
-                    prime = False
-        if prime:
-            primes.append(num)
+#         else:
+#             for x in range(2, num):
+#                 if (num % x == 0):
+#                     prime = False
+#         if prime:
+#             primes.append(num)
 
-    return primes
+#     return primes
 
-down = int(input("Enter the range:\nstar: "))
-up = int(input("finish: "))
+# down = int(input("Enter the range:\nstar: "))
+# up = int(input("finish: "))
 
-primes = (find_primes(down, up))
-for prime in primes:
-    print(prime)
+# primes = (find_primes(down, up))
+# for prime in primes:
+#     print(prime)
     
     
+# the function that finds Fibonacci sequence
 
+def fib_finder(k): # k = the number of Fibonacci sequences
+    nums = [1, 1]
+    
+    if k == 1:         # cheaching the first 2 sequence
+        nums = nums[0:1]
+    elif k == 2:
+        nums = nums[:]
+        
+    while k > len(nums):
+        nums.append(nums[-1] +nums[-2])
+    
+    return nums
+
+k = int(input('Enter the number of Fibonacci sequences:\n>>> '))
+print(fib_finder(k))
+
+
+# # 2nd version
+# def fibonacci(n):
+#     sonlar = []
+#     for x in range(n):
+#         if x==0 or x==1:
+#             sonlar.append(1)        
+#         else:
+#             sonlar.append(sonlar[x-1]+sonlar[x-2])
+#     return sonlar
+
+# print(fibonacci(5))
+
+
+    
 
 
 
